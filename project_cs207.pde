@@ -46,7 +46,7 @@ void setup() {
   // algorithm if it is giving too many false-positives. The default value is 10, 
   // which is essentially no damping. If you try to set the sensitivity to a negative value, 
   // an error will be reported and it will be set to 10 instead. 
-  beat.setSensitivity(450);  
+  beat.setSensitivity(300);  
   kickSize = 16;
   snareSize = 16;
   hatSize = 16;
@@ -76,7 +76,7 @@ void draw() {
   if(beat.isHat()) {
       arduino.digitalWrite(ledPin3, Arduino.HIGH);   // set the LED on
       hatSize = 32;
-    
+      
   }
   arduino.digitalWrite(ledPin, Arduino.LOW);    // set the LED off
   arduino.digitalWrite(ledPin2, Arduino.LOW);    // set the LED off
