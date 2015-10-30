@@ -65,7 +65,7 @@ void draw()
       // Each range has a multiplier, to adjust the visual response. This is based on tests, feel free to change it.
       // I changed them a lot, feel free to change what bars are included too. Some will be OK for certain music, or not.
     }
-    else if (i<=5)
+    else if (i<=10)
     {
       if (vectormedias[1]<1.2*fftLin.getAvg(i))
         vectormedias[1]=1.2*fftLin.getAvg(i);
@@ -75,7 +75,7 @@ void draw()
       if (vectormedias[2]<1.6*fftLin.getAvg(i))
         vectormedias[2]=1.6*fftLin.getAvg(i);
     }
-    else if (i<=22)
+    else if (i<=15)
     {
       if (vectormedias[3]<1.75*fftLin.getAvg(i))
         vectormedias[3]=1.75*fftLin.getAvg(i);
@@ -85,7 +85,7 @@ void draw()
       if (vectormedias[4]<2*fftLin.getAvg(i))
         vectormedias[4]=2*fftLin.getAvg(i);
     }
-    if (i<=160)
+    if (i<=200)
     {
       //This is the last one. It is multiplied by the bar index, to give more weight to the final frequencies (that tend to be lower always).
       //This gives good feedback for noise, high pitch sounds, or percusion instruments.
