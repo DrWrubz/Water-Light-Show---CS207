@@ -7,7 +7,7 @@ http://www.youtube.com/watch?v=pH9U5miKfcc
 
 */
 
-const int vectledPin[]={3,5,6,9,10,11,12};
+const int vectledPin[]={3,5,6,9,12};
 
 /*These are the values that will be given to the PWM ports on the arduino. The arduino will receive values between 0 and 30,
 that measures the "volume" linearlly. However, the LED's don't bright linearlly, so I tested it a bit and put these values
@@ -22,7 +22,7 @@ void setup()
   // initialize the serial communication:
   Serial.begin(9600);
   // initialize the ledPin as an output:
-  for (i=0;i<7;i++)
+  for (i=0;i<6;i++)
     pinMode(vectledPin[i], OUTPUT);
   i=0;
 }
