@@ -22,7 +22,7 @@ Minim minim;
 FFT fftLin;
 //I used an example of FFT as a base, and tweaked it a bit.
 
-float vectormedias[]=new float[6]; // this keeps the averages of the 6 bands of frequency.
+float vectormedias[]=new float[5]; // this keeps the averages of the 6 bands of frequency.
 float magnitud=4; //general setting, it multiplies all volume signal.
 float volumen;  // this measures the general volume, but it changes slowly (like a P control) to avoid noise
 int volcaptado; // this is the final volume sent to arduino for a certain led. It gives the index to the brightness vector.
@@ -54,7 +54,7 @@ void draw()
 
   noStroke();
   fill(255);
-  int w = int(width/6);
+  int w = int(width/5);
   //next follows a for that gets the maximum of certain ranges of bars, for 6 LEDs
   for(int i = 0; i < 120; i++)
   {
@@ -80,20 +80,16 @@ void draw()
       if (vectormedias[3]<1.75*fftLin.getAvg(i))
         vectormedias[3]=1.75*fftLin.getAvg(i);
     }
-    else if (i<=55)
-    {
-      if (vectormedias[4]<2*fftLin.getAvg(i))
-        vectormedias[4]=2*fftLin.getAvg(i);
-    }
+    
     if (i<=200)
     {
       //This is the last one. It is multiplied by the bar index, to give more weight to the final frequencies (that tend to be lower always).
       //This gives good feedback for noise, high pitch sounds, or percusion instruments.
-      vectormedias[5]=i*fftLin.getAvg(i)/300+vectormedias[5];
+      vectormedias[4]=i*fftLin.getAvg(i)/300+vectormedias[5];
     }
     if (i==119)
     {
-      for (byte k=0;k<6;k++)
+      for (byte k=0;k<5;k++)
       { delay(10);
         fill(255);
           //The following number is important. It is the level that is taken as real input, if you catch noise
