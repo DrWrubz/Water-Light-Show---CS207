@@ -22,7 +22,7 @@ Minim minim;
 FFT fftLin;
 //I used an example of FFT as a base, and tweaked it a bit.
 
-float vectormedias[]=new float[5]; // this keeps the averages of the 6 bands of frequency.
+float vectormedias[]=new float[5]; // this keeps the averages of the 5 bands of frequency.
 float magnitud=4; //general setting, it multiplies all volume signal.
 float volumen;  // this measures the general volume, but it changes slowly (like a P control) to avoid noise
 int volcaptado; // this is the final volume sent to arduino for a certain led. It gives the index to the brightness vector.
