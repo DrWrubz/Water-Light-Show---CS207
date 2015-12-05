@@ -55,7 +55,7 @@ void draw()
   noStroke();
   fill(255);
   int w = int(width/5);
-  //next follows a for that gets the maximum of certain ranges of bars, for 6 LEDs
+  //next follows a for that gets the maximum of certain ranges of bars, for 4 LEDs and teh water pump.
   for(int i = 0; i < 120; i++)
   {
     if (i<=1)
